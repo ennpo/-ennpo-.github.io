@@ -4,15 +4,15 @@ var map = new ol.Map({
     renderer: 'canvas',
     layers: layersList,
     view: new ol.View({
-         maxZoom: 17, minZoom: 6, projection: new ol.proj.Projection({
-            code: 'EPSG:3067',
-            //extent: [265642.531250, 6632288.000000, 475008.687500, 6746389.500000],
+         maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
+            code: 'EPSG:3035',
+            //extent: [-4740944.824245, -6974816.656841, 10025675.828068, 7133293.699005],
             units: 'm'})
     })
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([265642.531250, 6632288.000000, 475008.687500, 6746389.500000], map.getSize());
+map.getView().fit([3642833.128940, 2066640.099033, 6087177.480034, 4876283.144663], map.getSize());
 
 //full zooms only
 map.getView().setProperties({constrainResolution: true});
@@ -501,7 +501,7 @@ var Title = new ol.control.Control({
     element: (() => {
         var titleElement = document.createElement('div');
         titleElement.className = 'top-right-title ol-control';
-        titleElement.innerHTML = '<h2 class="project-title">Flying Squirrel Observations in Uusimaa (1990–2024)</h2>';
+        titleElement.innerHTML = '<h2 class="project-title">INCOMING ERASMUS STUDENTS (2018)</h2>';
         return titleElement;
     })(),
     target: 'top-right-container'
